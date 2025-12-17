@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    name: Build AmneziaWG ${{ matrix.IMAGE_POSTFIX }}
+    name: ${{ matrix.IMAGE_POSTFIX }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -23,6 +23,14 @@ jobs:
             TARGETARCH: arm
             TARGETVARIANT: 7
             IMAGE_POSTFIX: armv7
+          - TARGETPLATFORM: linux/amd64
+            TARGETARCH: amd64
+            TARGETVARIANT: ""
+            IMAGE_POSTFIX: amd64
+          - TARGETPLATFORM: linux/arm64
+            TARGETARCH: arm64
+            TARGETVARIANT: ""
+            IMAGE_POSTFIX: arm64
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
