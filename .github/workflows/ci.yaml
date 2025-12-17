@@ -48,5 +48,5 @@ jobs:
             TARGETARCH=${{ matrix.TARGETARCH }}
             TARGETVARIANT=${{ matrix.TARGETVARIANT }}
           tags: |
-            ${{ env.DOCKER_CONTAINER_REGISTRY }}/${{ github.repository_owner }}/${{ github.repository }}-${{ matrix.IMAGE_POSTFIX}}:latest
-            ${{ env.DOCKER_CONTAINER_REGISTRY }}/${{ github.repository_owner }}/${{ github.repository }}-${{ matrix.IMAGE_POSTFIX}}:${{ github.run_number }}
+            ${{ env.DOCKER_CONTAINER_REGISTRY }}/${{ github.repository }}-${{ matrix.IMAGE_POSTFIX}}:latest
+            ${{ env.DOCKER_CONTAINER_REGISTRY }}/${{ github.repository }}-${{ matrix.IMAGE_POSTFIX}}:${{ github.run_number }}
